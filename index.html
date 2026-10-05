@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHASS 09461 Slawi Motor (Cabang Kedua) - CRM & Broadcast Digital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        honda: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        @keyframes pulse-attention {
+            0% { transform: scale(0.99); }
+            50% { transform: scale(1.01); }
+            100% { transform: scale(0.99); }
+        }
+        .pulse-card { animation: pulse-attention 3s infinite ease-in-out; }
+    </style>
+</head>
+<body class="h-full text-slate-800 flex flex-col font-sans bg-slate-100">
+
+    <!-- BRANDING HEADER AHASS 09461 HONDA SLAWI MOTOR CABANG KEDUA -->
+    <header class="bg-gradient-to-r from-honda-900 via-honda-700 to-slate-900 text-white shadow-xl sticky top-0 z-30 border-b-4 border-amber-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between py-3 gap-3">
+                
+                <!-- Logo & Title AHASS 09461 -->
+                <div class="flex items-center space-x-3 w-full md:w-auto justify-between md:justify-start">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center shrink-0">
+                            <!-- Honda Wing SVG Logo Style -->
+                            <svg class="w-8 h-8 text-honda-600 fill-current" viewBox="0 0 24 24">
+                                <path d="M21.36 3.86C19.73 4.88 17.06 6.64 15.1 8.24C13.62 6.89 11.23 5.37 8.36 4.3C5.16 3.1 1.77 3.32 0.5 3.45C0.2 3.48 0 3.73 0 4.03C0 4.09 0.01 4.15 0.03 4.2C0.54 5.92 2.27 10.87 6.67 13.9C4.84 14.86 2.45 15.69 0.88 16.03C0.58 16.09 0.38 16.36 0.41 16.66C0.44 16.96 0.69 17.18 1 17.18C1.07 17.18 1.14 17.17 1.21 17.15C3.25 16.7 6.46 15.54 8.79 14.05C11.53 16.06 15.22 18.06 20.31 19.34C20.45 19.38 20.6 19.39 20.74 19.39C21.1 19.39 21.43 19.18 21.57 18.84C21.75 18.42 21.56 17.94 21.14 17.76C16.48 16.59 13.06 14.72 10.46 12.87C13.88 11.02 18.85 7.02 22.39 4.83C22.68 4.65 22.78 4.27 22.6 3.98C22.42 3.69 22.04 3.59 21.75 3.77L21.36 3.86Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="bg-amber-400 text-slate-950 font-black text-[10px] px-2 py-0.5 rounded tracking-widest uppercase shadow-sm">AHASS 09461</span>
+                                <span class="text-xs text-rose-200 font-medium">Cabang Kedua Slawi</span>
+                            </div>
+                            <h1 class="text-lg sm:text-xl font-black tracking-tight leading-tight uppercase">AHASS 09461 - Honda Slawi Motor</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="flex flex-wrap items-center gap-2 w-full md:w-auto justify-end">
+                    <button onclick="loadSampleDemoData()" class="px-2.5 py-1.5 text-xs font-semibold bg-amber-400 hover:bg-amber-300 text-slate-950 rounded-lg transition shadow flex items-center gap-1.5" title="Muat data contoh konsumen Cabang Kedua">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> <span>Load Data Demo</span>
+                    </button>
+                    <button onclick="openImportModal()" class="px-2.5 py-1.5 text-xs font-semibold bg-white/10 hover:bg-white/20 text-white rounded-lg transition border border-white/20 flex items-center gap-1.5">
+                        <i class="fa-solid fa-file-import"></i> <span>Import</span>
+                    </button>
+                    <button onclick="exportDataCSV()" class="px-2.5 py-1.5 text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-file-csv"></i> <span>Export CSV</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
+
+        <!-- STATISTIK RINGKAS OPERASIONAL AHASS 09461 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Konsumen AHASS 09461</p>
+                    <h3 class="text-2xl font-black text-slate-800 mt-1" id="stat-total">0</h3>
+                    <p class="text-[11px] text-slate-400">Cabang Kedua Terdaftar</p>
+                </div>
+                <div class="w-12 h-12 bg-slate-100 text-slate-700 rounded-xl flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-motorcycle"></i>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border-2 border-honda-600 shadow-sm flex items-center justify-between bg-honda-50/30">
+                <div>
+                    <p class="text-xs font-bold text-honda-700 uppercase tracking-wider flex items-center gap-1">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Waktunya Servis (≥ 60 Hari)
+                    </p>
+                    <h3 class="text-2xl font-black text-honda-600 mt-1" id="stat-followup-needed">0</h3>
+                    <p class="text-[11px] text-honda-600/80 font-semibold">Jatuh Tempo 2 Bulan+</p>
+                </div>
+                <div class="w-12 h-12 bg-honda-600 text-white rounded-xl flex items-center justify-center text-xl font-bold shadow">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+                <div>
+                    <p class="text-xs font-bold text-amber-600 uppercase tracking-wider">Konsumen Pasif (≥ 120 Hari)</p>
+                    <h3 class="text-2xl font-black text-amber-600 mt-1" id="stat-old-customers">0</h3>
+                    <p class="text-[11px] text-slate-400">Target Win-Back Promo</p>
+                </div>
+                <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-user-clock"></i>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+                <div>
+                    <p class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Ada Catatan Mekanik</p>
+                    <h3 class="text-2xl font-black text-emerald-600 mt-1" id="stat-has-notes">0</h3>
+                    <p class="text-[11px] text-slate-400">Rekomendasi Parts / Rem / CVT</p>
+                </div>
+                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOP ALERT SECTION: DAFTAR KONSUMEN JATUH TEMPO SERVICE 2 BULAN -->
+        <section id="top-priority-panel" class="bg-slate-900 rounded-2xl shadow-xl border-2 border-honda-600 p-5 text-white overflow-hidden relative pulse-card">
+            <div class="absolute -right-6 -bottom-6 opacity-10 text-white text-9xl pointer-events-none">
+                <i class="fa-solid fa-wrench"></i>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4 mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-honda-600 text-white rounded-xl flex items-center justify-center text-lg font-bold shrink-0 shadow-lg">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-base sm:text-lg font-black text-amber-300 flex items-center gap-2 uppercase tracking-wide">
+                            🚨 PERLU BROADCAST HARI INI (AHASS 09461 - SERVIS 2 BULAN+)
+                        </h2>
+                        <p class="text-xs text-slate-300">
+                            Daftar pelanggan AHASS 09461 Slawi Motor (Cabang Kedua) yang berada di interval <span class="text-amber-300 font-bold underline">60 hari atau lebih</span> sejak servis terakhir.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <button onclick="openBroadcastQueueModal()" class="bg-amber-400 hover:bg-amber-300 text-slate-950 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Mode Queue Broadcast
+                    </button>
+                </div>
+            </div>
+
+            <!-- Urgent List Container -->
+            <div id="urgent-followup-container" class="space-y-3 max-h-[380px] overflow-y-auto pr-1">
+                <!-- Dynamic Content loaded via JS -->
+            </div>
+        </section>
+
+        <!-- TAB NAVIGATION & ACTIONS -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-3">
+            <div class="flex flex-wrap gap-2">
+                <button onclick="switchTab('due')" id="tab-due" class="tab-btn px-4 py-2 rounded-lg text-xs font-bold transition flex items-center gap-2 bg-honda-600 text-white shadow">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Perlu Servis 2 Bln+
+                    <span id="badge-due" class="bg-white/20 text-white px-2 py-0.5 rounded-full text-[11px]">0</span>
+                </button>
+                <button onclick="switchTab('old')" id="tab-old" class="tab-btn text-slate-600 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-bold transition flex items-center gap-2">
+                    <i class="fa-solid fa-user-clock text-amber-600"></i> Konsumen Pasif (≥ 4 Bln)
+                    <span id="badge-old" class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full text-[11px]">0</span>
+                </button>
+                <button onclick="switchTab('notes')" id="tab-notes" class="tab-btn text-slate-600 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-bold transition flex items-center gap-2">
+                    <i class="fa-solid fa-clipboard-check text-indigo-600"></i> Ada Catatan Mekanik
+                    <span id="badge-notes" class="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full text-[11px]">0</span>
+                </button>
+                <button onclick="switchTab('all')" id="tab-all" class="tab-btn text-slate-600 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-bold transition flex items-center gap-2">
+                    <i class="fa-solid fa-list"></i> Semua Konsumen
+                    <span id="badge-all" class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full text-[11px]">0</span>
+                </button>
+                <button onclick="switchTab('templates')" id="tab-templates" class="tab-btn text-slate-600 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-bold transition flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-rose-600"></i> Pengaturan Template WA
+                </button>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button onclick="openAddCustomerModal()" class="bg-honda-600 hover:bg-honda-700 text-white px-4 py-2 rounded-lg text-xs font-bold shadow transition flex items-center gap-2">
+                    <i class="fa-solid fa-user-plus"></i> Tambah Pelanggan Baru
+                </button>
+            </div>
+        </div>
+
+        <!-- CONTACTS TABLE VIEW -->
+        <div id="view-contacts" class="flex flex-col gap-4">
+            <!-- Search & Filter Bar -->
+            <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-3">
+                <div class="relative w-full lg:w-96">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <input type="text" id="search-input" oninput="renderCustomerList()" placeholder="Cari Plat (G 1234 AB), Nama, Motor, Catatan..." class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-honda-600 focus:bg-white transition">
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2 w-full lg:w-auto justify-end">
+                    <!-- Filter Tipe Motor -->
+                    <select id="filter-motor" onchange="renderCustomerList()" class="bg-slate-50 border border-slate-300 rounded-lg text-xs py-2 px-2.5 font-medium focus:ring-2 focus:ring-honda-600">
+                        <option value="ALL">Semua Tipe Motor</option>
+                        <option value="BeAT">Honda BeAT Series</option>
+                        <option value="Vario">Honda Vario Series</option>
+                        <option value="Scoopy">Honda Scoopy</option>
+                        <option value="PCX">Honda PCX</option>
+                        <option value="ADV">Honda ADV</option>
+                        <option value="Stylo">Honda Stylo</option>
+                        <option value="Genio">Honda Genio</option>
+                        <option value="Supra">Honda Supra X / Revo</option>
+                        <option value="Sport">Honda CB / CBR / CRF</option>
+                    </select>
+
+                    <!-- Filter Paket Servis -->
+                    <select id="filter-paket" onchange="renderCustomerList()" class="bg-slate-50 border border-slate-300 rounded-lg text-xs py-2 px-2.5 font-medium focus:ring-2 focus:ring-honda-600">
+                        <option value="ALL">Semua Jenis Servis</option>
+                        <option value="Servis Lengkap + Ganti Oli">Servis Lengkap + Ganti Oli</option>
+                        <option value="Servis CVT">Servis CVT</option>
+                        <option value="Ganti Ban / Kanvas Rem">Ganti Ban / Rem</option>
+                        <option value="Servis Injeksi / Busi">Servis Injeksi / Busi</option>
+                    </select>
+
+                    <!-- Sort -->
+                    <select id="sort-select" onchange="renderCustomerList()" class="bg-slate-50 border border-slate-300 rounded-lg text-xs py-2 px-2.5 font-bold focus:ring-2 focus:ring-honda-600">
+                        <option value="days-desc">Terakhir Servis (Paling Lama)</option>
+                        <option value="days-asc">Terakhir Servis (Terbaru)</option>
+                        <option value="name-asc">Nama Pelanggan (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Customer Table -->
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-900 text-white text-[11px] font-bold uppercase tracking-wider">
+                                <th class="py-3 px-4">Nama & No. WhatsApp</th>
+                                <th class="py-3 px-4">Plat & Tipe Motor</th>
+                                <th class="py-3 px-4">Servis Terakhir & KM</th>
+                                <th class="py-3 px-4">Paket Servis & Catatan Mekanik</th>
+                                <th class="py-3 px-4 text-center">Status Servis</th>
+                                <th class="py-3 px-4 text-center">Last Broadcast</th>
+                                <th class="py-3 px-4 text-center">Aksi WA</th>
+                                <th class="py-3 px-4 text-right">Kelola</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customer-table-body" class="divide-y divide-slate-200 text-xs">
+                            <!-- Populated dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="empty-state" class="hidden p-12 text-center">
+                    <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </div>
+                    <h4 class="text-slate-700 font-bold text-sm">Tidak ada data konsumen yang sesuai</h4>
+                    <p class="text-xs text-slate-400 mt-1">Coba sesuaikan kata kunci pencarian atau ubah filter di atas.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEMPLATE SETTINGS VIEW -->
+        <div id="view-templates" class="hidden flex-col gap-6">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-slate-200 pb-4">
+                    <div>
+                        <h3 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i> Pengaturan Template Broadcast WA AHASS 09461
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Kelola template pesan resmi WhatsApp AHASS 09461 Slawi Motor (Cabang Kedua) dengan placeholder otomatis.</p>
+                    </div>
+                    <button onclick="saveTemplates()" class="bg-honda-600 hover:bg-honda-700 text-white px-5 py-2.5 rounded-lg text-xs font-bold transition flex items-center gap-2 shadow">
+                        <i class="fa-solid fa-floppy-disk"></i> Simpan Semua Template
+                    </button>
+                </div>
+
+                <!-- Variable Pills Helper -->
+                <div class="bg-rose-50 border border-rose-200 p-3.5 rounded-xl mb-6 flex flex-wrap gap-2 items-center text-xs text-honda-900">
+                    <span class="font-bold flex items-center gap-1"><i class="fa-solid fa-code"></i> Sisipkan Variable Dinamis:</span>
+                    <button type="button" onclick="insertVariable('{nama}')" class="bg-white px-2 py-1 rounded border border-rose-300 font-mono hover:bg-rose-100 font-bold shadow-sm">{nama}</button>
+                    <button type="button" onclick="insertVariable('{plat}')" class="bg-white px-2 py-1 rounded border border-rose-300 font-mono hover:bg-rose-100 font-bold shadow-sm">{plat}</button>
+                    <button type="button" onclick="insertVariable('{motor}')" class="bg-white px-2 py-1 rounded border border-rose-300 font-mono hover:bg-rose-100 font-bold shadow-sm">{motor}</button>
+                    <button type="button" onclick="insertVariable('{tanggal_terakhir}')" class="bg-white px-2 py-1 rounded border border-rose-300 font-mono hover:bg-rose-100 font-bold shadow-sm">{tanggal_terakhir}</button>
+                    <button type="button" onclick="insertVariable('{km_terakhir}')" class="bg-white px-2 py-1 rounded border border-rose-300 font-mono hover:bg-rose-100 font-bold shadow-sm">{km_terakhir}</button>
+                    <button type="button" onclick="insertVariable('{paket_servis}')" class="bg-white px-2 py-1 rounded border border-rose-300 font-mono hover:bg-rose-100 font-bold shadow-sm">{paket_servis}</button>
+                    <button type="button" onclick="insertVariable('{catatan_mekanik}')" class="bg-white px-2 py-1 rounded border border-rose-300 font-mono hover:bg-rose-100 font-bold shadow-sm">{catatan_mekanik}</button>
+                    <button type="button" onclick="insertVariable('{hari_lalu}')" class="bg-white px-2 py-1 rounded border border-rose-300 font-mono hover:bg-rose-100 font-bold shadow-sm">{hari_lalu}</button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Template 1: Servis 2 Bulan -->
+                    <div class="flex flex-col gap-2 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <label class="text-xs font-bold text-slate-800 uppercase tracking-wide flex items-center justify-between">
+                            <span>1. Template Pengingat Servis Rutin 2 Bulan</span>
+                            <span class="text-honda-600 font-bold normal-case">(Default Servis Berkala)</span>
+                        </label>
+                        <textarea id="tpl-reminder" rows="7" class="w-full p-3 border border-slate-300 rounded-lg text-xs font-sans focus:ring-2 focus:ring-honda-600 focus:bg-white focus:outline-none"></textarea>
+                    </div>
+
+                    <!-- Template 2: Konsumen Pasif 4 Bulan -->
+                    <div class="flex flex-col gap-2 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <label class="text-xs font-bold text-slate-800 uppercase tracking-wide flex items-center justify-between">
+                            <span>2. Template Konsumen Pasif (≥ 4 Bulan)</span>
+                            <span class="text-amber-600 font-bold normal-case">(Campaign Win-Back & Promo)</span>
+                        </label>
+                        <textarea id="tpl-old" rows="7" class="w-full p-3 border border-slate-300 rounded-lg text-xs font-sans focus:ring-2 focus:ring-honda-600 focus:bg-white focus:outline-none"></textarea>
+                    </div>
+
+                    <!-- Template 3: Follow-Up Catatan Mekanik -->
+                    <div class="flex flex-col gap-2 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <label class="text-xs font-bold text-slate-800 uppercase tracking-wide flex items-center justify-between">
+                            <span>3. Template Follow-Up Catatan Mekanik</span>
+                            <span class="text-indigo-600 font-bold normal-case">(Rekomendasi Parts/Rem/CVT)</span>
+                        </label>
+                        <textarea id="tpl-notes" rows="7" class="w-full p-3 border border-slate-300 rounded-lg text-xs font-sans focus:ring-2 focus:ring-honda-600 focus:bg-white focus:outline-none"></textarea>
+                    </div>
+
+                    <!-- Template 4: Kepuasan Pelanggan H+1 Servis -->
+                    <div class="flex flex-col gap-2 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <label class="text-xs font-bold text-slate-800 uppercase tracking-wide flex items-center justify-between">
+                            <span>4. Template CS Kepuasan Pelanggan (H+1 Servis)</span>
+                            <span class="text-emerald-600 font-bold normal-case">(Feedback / Rating CS)</span>
+                        </label>
+                        <textarea id="tpl-cs" rows="7" class="w-full p-3 border border-slate-300 rounded-lg text-xs font-sans focus:ring-2 focus:ring-honda-600 focus:bg-white focus:outline-none"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MODAL FORM TAMBAH / EDIT KONSUMEN -->
+    <div id="modal-customer" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-lg overflow-hidden my-8">
+            <div class="px-6 py-4 bg-honda-700 text-white flex justify-between items-center">
+                <h3 class="font-bold text-sm flex items-center gap-2 uppercase tracking-wide" id="modal-title">
+                    <i class="fa-solid fa-motorcycle text-amber-300"></i> Tambah Pelanggan AHASS 09461
+                </h3>
+                <button onclick="closeCustomerModal()" class="text-white/80 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <form id="customer-form" onsubmit="handleCustomerFormSubmit(event)" class="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
+                <input type="hidden" id="cust-id">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap Konsumen *</label>
+                        <input type="text" id="cust-name" required placeholder="Contoh: Budi Santoso" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-honda-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp / HP *</label>
+                        <input type="text" id="cust-phone" required placeholder="081234567890" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-honda-600 focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Plat Nomor Motor *</label>
+                        <input type="text" id="cust-plat" required placeholder="G 1234 AB" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs uppercase font-bold focus:ring-2 focus:ring-honda-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Tipe Motor Honda *</label>
+                        <select id="cust-motor" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-honda-600 focus:outline-none">
+                            <option value="">-- Pilih Tipe Motor --</option>
+                            <optgroup label="Matik">
+                                <option value="Honda BeAT Deluxe">Honda BeAT Deluxe</option>
+                                <option value="Honda BeAT Street">Honda BeAT Street</option>
+                                <option value="Honda Vario 125">Honda Vario 125</option>
+                                <option value="Honda Vario 160">Honda Vario 160</option>
+                                <option value="Honda Scoopy Prestige">Honda Scoopy Prestige</option>
+                                <option value="Honda PCX 160">Honda PCX 160</option>
+                                <option value="Honda ADV 160">Honda ADV 160</option>
+                                <option value="Honda Stylo 160">Honda Stylo 160</option>
+                                <option value="Honda Genio">Honda Genio</option>
+                            </optgroup>
+                            <optgroup label="Bebek">
+                                <option value="Honda Supra X 125">Honda Supra X 125</option>
+                                <option value="Honda Revo Fit">Honda Revo Fit</option>
+                            </optgroup>
+                            <optgroup label="Sport">
+                                <option value="Honda CB150R Streetfire">Honda CB150R Streetfire</option>
+                                <option value="Honda CBR150R">Honda CBR150R</option>
+                                <option value="Honda CRF150L">Honda CRF150L</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Tanggal Servis Terakhir *</label>
+                        <input type="date" id="cust-date" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-honda-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Kilometer (KM) Terakhir *</label>
+                        <input type="number" id="cust-km" required placeholder="Contoh: 12500" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-honda-600 focus:outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Paket Servis Terakhir *</label>
+                    <select id="cust-paket" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-honda-600 focus:outline-none">
+                        <option value="Servis Lengkap + Ganti Oli">Servis Lengkap + Ganti Oli</option>
+                        <option value="Servis Lengkap">Servis Lengkap</option>
+                        <option value="Servis CVT + Ganti Oli">Servis CVT + Ganti Oli</option>
+                        <option value="Ganti Ban / Kanvas Rem">Ganti Ban / Kanvas Rem</option>
+                        <option value="Servis Injeksi / Busi">Servis Injeksi / Busi</option>
+                        <option value="Servis Berat / Turun Mesin">Servis Berat / Turun Mesin</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Catatan Mekanik / Rekomendasi Servis Berikutnya</label>
+                    <textarea id="cust-notes" rows="2" placeholder="Contoh: Kanvas rem belakang tipis, ganti di servis berikutnya. V-Belt perlu dicek." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-honda-600 focus:outline-none"></textarea>
+                </div>
+
+                <div class="pt-2 flex justify-end gap-2 border-t border-slate-200">
+                    <button type="button" onclick="closeCustomerModal()" class="px-4 py-2 border border-slate-300 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-50 transition">Batal</button>
+                    <button type="submit" class="px-4 py-2 bg-honda-600 hover:bg-honda-700 text-white rounded-lg text-xs font-bold transition shadow">Simpan Data Pelanggan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL BROADCAST QUEUE -->
+    <div id="modal-broadcast" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-2xl overflow-hidden flex flex-col max-h-[85vh]">
+            <div class="px-6 py-4 bg-honda-700 text-white flex justify-between items-center shrink-0">
+                <div>
+                    <h3 class="font-extrabold text-sm flex items-center gap-2 uppercase tracking-wide">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Queue Broadcast WA AHASS 09461 Slawi Motor
+                    </h3>
+                    <p class="text-xs text-rose-100 mt-0.5">Kirim pengingat servis berurutan untuk Cabang Kedua</p>
+                </div>
+                <button onclick="closeBroadcastQueueModal()" class="text-white/80 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <div class="p-4 bg-slate-50 border-b border-slate-200 shrink-0 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                    <label class="text-xs font-bold text-slate-700">Filter Queue:</label>
+                    <select id="broadcast-filter" onchange="generateBroadcastQueue()" class="bg-white border border-slate-300 rounded-lg text-xs py-1.5 px-3 focus:ring-2 focus:ring-honda-600 font-bold">
+                        <option value="due">Waktunya Servis 2 Bln (≥ 60 Hari)</option>
+                        <option value="old">Konsumen Pasif (≥ 120 Hari)</option>
+                        <option value="notes">Ada Catatan Rekomendasi Mekanik</option>
+                        <option value="all">Semua Konsumen</option>
+                    </select>
+                </div>
+                <div class="text-xs text-slate-600 font-semibold">
+                    Target Broadcast: <span id="queue-count" class="font-black text-honda-600 text-sm">0</span> Orang
+                </div>
+            </div>
+
+            <div class="p-6 overflow-y-auto flex-1 space-y-3" id="broadcast-queue-list">
+                <!-- Dynamic Queue -->
+            </div>
+
+            <div class="px-6 py-3 bg-slate-50 border-t border-slate-200 text-right shrink-0">
+                <button onclick="closeBroadcastQueueModal()" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-bold rounded-lg transition">Tutup Window</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL IMPORT -->
+    <div id="modal-import" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 w-full max-w-md overflow-hidden">
+            <div class="px-6 py-4 bg-slate-900 text-white flex justify-between items-center">
+                <h3 class="font-bold text-xs uppercase tracking-wider">Import Data AHASS 09461</h3>
+                <button onclick="closeImportModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="p-6 space-y-4">
+                <p class="text-xs text-slate-600">Pilih file data pelanggan berformat <b>JSON</b> atau <b>CSV</b>.</p>
+                <input type="file" id="import-file-input" accept=".json,.csv" class="block w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200">
+                <div class="pt-2 flex justify-end gap-2">
+                    <button type="button" onclick="closeImportModal()" class="px-4 py-2 border border-slate-300 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-50">Batal</button>
+                    <button type="button" onclick="processImportFile()" class="px-4 py-2 bg-honda-600 hover:bg-honda-700 text-white rounded-lg text-xs font-bold">Proses Import</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-50 hidden flex items-center gap-3 transition-all transform duration-300 translate-y-10 opacity-0 border border-slate-700 text-xs font-medium">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+        <span id="toast-message">Notifikasi</span>
+    </div>
+
+    <script>
+        const STORAGE_KEY_CUSTOMERS = 'ahass_09461_customers_v4';
+        const STORAGE_KEY_TEMPLATES = 'ahass_09461_templates_v4';
+
+        let customers = [];
+        let templates = {
+            reminder: "Salam Satu HATI! Halo Bapak/Ibu *{nama}* ({plat} - {motor}). Tidak terasa sudah *{hari_lalu} hari* ({tanggal_terakhir}) sejak servis terakhir di *AHASS 09461 Honda Slawi Motor (Cabang Kedua)* pada kilometer *{km_terakhir} KM*.\n\nYuk lakukan Servis Berkala & Ganti Oli MPX/SPX agar performa motor Honda Anda selalu prima & irit. Hubungi kami untuk booking antrean tanpa rewel!",
+            old: "Salam Satu HATI! Kami merindukan kehadiran Bapak/Ibu *{nama}* ({plat} - {motor}) di *AHASS 09461 Honda Slawi Motor (Cabang Kedua)*. Sudah *{hari_lalu} hari* sepeda motor Honda Anda tidak melakukan pemeriksaan berkala.\n\nDapatkan promo pemeriksaan gratis safety check komponen rem & ban minggu ini khusus pelanggan setia!",
+            notes: "Salam Satu HATI! Halo Bapak/Ibu *{nama}* ({plat} - {motor}). Mengingatkan kembali catatan mekanik AHASS 09461 Slawi Motor (Cabang Kedua) dari servis terakhir ({tanggal_terakhir}):\n\n📌 Catatan: *{catatan_mekanik}*\n\nMari jadwalkan servis agar berkendara tetap aman dan nyaman!",
+            cs: "Salam Satu HATI! Terima kasih Bapak/Ibu *{nama}* ({plat} - {motor}) telah melakukan servis *{paket_servis}* di *AHASS 09461 Honda Slawi Motor (Cabang Kedua)* pada tanggal {tanggal_terakhir}.\n\nBagaimanakah performa sepeda motor Anda setelah diservis? Kepuasan Anda adalah prioritas utama kami!"
+        };
+
+        let currentTab = 'due';
+        let broadcastQueueSentState = {};
+
+        // Helper date relative generator
+        function daysAgoDate(days) {
+            const today = new Date();
+            const d = new Date(today);
+            d.setDate(d.getDate() - days);
+            return d.toISOString().split('T')[0];
+        }
+
+        // Demo sample data untuk AHASS 09461 Slawi Motor Cabang Kedua
+        function getInitialAHASSSampleData() {
+            return [
+                { id: '1', name: 'Siti Rahmawati', plat: 'G 4512 BZ', motor: 'Honda Vario 160', phone: '081234567890', date: daysAgoDate(68), km: 14200, paket: 'Servis Lengkap + Ganti Oli', notes: 'Kanvas rem belakang mulai tipis, rekom ganti di servis berikutnya', followedUp: false, lastBroadcast: null },
+                { id: '2', name: 'Agus Setiawan', plat: 'G 1289 AK', motor: 'Honda BeAT Street', phone: '085678901234', date: daysAgoDate(75), km: 21500, paket: 'Servis CVT + Ganti Oli', notes: 'V-Belt sedikit aus, bersihkan CVT berkala', followedUp: false, lastBroadcast: null },
+                { id: '3', name: 'Dedi Kurniawan', plat: 'G 9011 CC', motor: 'Honda PCX 160', phone: '087812345678', date: daysAgoDate(140), km: 32000, paket: 'Servis Lengkap + Ganti Oli', notes: 'Konsumen pasif - rekomendasi ganti air radiator & busi', followedUp: false, lastBroadcast: null },
+                { id: '4', name: 'Rina Wijaya', plat: 'G 3341 KL', motor: 'Honda Scoopy Prestige', phone: '082198765432', date: daysAgoDate(20), km: 8500, paket: 'Servis Lengkap + Ganti Oli', notes: 'Kondisi mulus, rantai/belt sudah diolesi pelumas', followedUp: true, lastBroadcast: daysAgoDate(1) },
+                { id: '5', name: 'Eko Nurcahyo', plat: 'G 5678 GH', motor: 'Honda CB150R Streetfire', phone: '083811223344', date: daysAgoDate(90), km: 18400, paket: 'Servis Injeksi / Busi', notes: 'Setel rantai & ganti minyak rem', followedUp: true, lastBroadcast: daysAgoDate(2) }
+            ];
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadStorageData();
+            updateStatsAndBadges();
+            renderTopPriorityPanel();
+            renderCustomerList();
+            initTemplateFields();
+        });
+
+        function loadStorageData() {
+            const storedCust = localStorage.getItem(STORAGE_KEY_CUSTOMERS);
+            if (storedCust) {
+                try {
+                    customers = JSON.parse(storedCust);
+                } catch(e) {
+                    customers = getInitialAHASSSampleData();
+                }
+            } else {
+                customers = getInitialAHASSSampleData();
+                saveCustomersToStorage();
+            }
+
+            const storedTpl = localStorage.getItem(STORAGE_KEY_TEMPLATES);
+            if (storedTpl) {
+                try { templates = JSON.parse(storedTpl); } catch(e){}
+            }
+        }
+
+        function loadSampleDemoData() {
+            if(confirm('Muat data sampel contoh konsumen AHASS 09461 Slawi Motor (Cabang Kedua)? Data saat ini akan digantikan dengan data sampel.')) {
+                customers = getInitialAHASSSampleData();
+                saveCustomersToStorage();
+                renderCustomerList();
+                showToast('Data demo AHASS 09461 berhasil dimuat!');
+            }
+        }
+
+        function saveCustomersToStorage() {
+            localStorage.setItem(STORAGE_KEY_CUSTOMERS, JSON.stringify(customers));
+            updateStatsAndBadges();
+            renderTopPriorityPanel();
+        }
+
+        function saveTemplatesToStorage() {
+            localStorage.setItem(STORAGE_KEY_TEMPLATES, JSON.stringify(templates));
+        }
+
+        function calculateDaysAgo(dateString) {
+            if (!dateString) return 0;
+            const transDate = new Date(dateString);
+            const today = new Date();
+            transDate.setHours(0,0,0,0);
+            today.setHours(0,0,0,0);
+            const diffTime = today - transDate;
+            return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        }
+
+        function formatDateID(dateString) {
+            if(!dateString) return '-';
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('id-ID', options);
+        }
+
+        function formatPhoneNumber(phone) {
+            let cleaned = (phone || '').replace(/\D/g, '');
+            if (cleaned.startsWith('0')) {
+                cleaned = '62' + cleaned.slice(1);
+            }
+            return cleaned;
+        }
+
+        function isDueFor2MonthService(cust) {
+            const days = calculateDaysAgo(cust.date);
+            return days >= 60 && !cust.followedUp;
+        }
+
+        function isOldCustomer(cust) {
+            const days = calculateDaysAgo(cust.date);
+            return days >= 120 && !cust.followedUp;
+        }
+
+        function updateStatsAndBadges() {
+            let total = customers.length;
+            let dueCount = 0;
+            let oldCount = 0;
+            let notesCount = 0;
+
+            customers.forEach(c => {
+                const days = calculateDaysAgo(c.date);
+                if (days >= 60 && !c.followedUp) dueCount++;
+                if (days >= 120 && !c.followedUp) oldCount++;
+                if (c.notes && c.notes.trim().length > 0) notesCount++;
+            });
+
+            document.getElementById('stat-total').innerText = total;
+            document.getElementById('stat-followup-needed').innerText = dueCount;
+            document.getElementById('stat-old-customers').innerText = oldCount;
+            document.getElementById('stat-has-notes').innerText = notesCount;
+
+            document.getElementById('badge-all').innerText = total;
+            document.getElementById('badge-due').innerText = dueCount;
+            document.getElementById('badge-old').innerText = oldCount;
+            document.getElementById('badge-notes').innerText = notesCount;
+        }
+
+        function renderTopPriorityPanel() {
+            const container = document.getElementById('urgent-followup-container');
+            const urgentList = customers.filter(c => isDueFor2MonthService(c));
+
+            urgentList.sort((a, b) => calculateDaysAgo(b.date) - calculateDaysAgo(a.date));
+
+            if (urgentList.length === 0) {
+                container.innerHTML = `
+                    <div class="bg-white/10 rounded-xl p-4 text-center text-rose-100 text-xs font-medium">
+                        <i class="fa-solid fa-circle-check text-emerald-400 text-base mb-1 block"></i>
+                        Semua pelanggan AHASS 09461 sudah di-followup atau belum mencapai 60 hari servis.
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = '';
+            urgentList.forEach(c => {
+                const days = calculateDaysAgo(c.date);
+                const item = document.createElement('div');
+                item.className = 'bg-white text-slate-800 rounded-xl p-3.5 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-3 border-l-4 border-honda-600';
+                
+                item.innerHTML = `
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="bg-honda-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase">
+                                <i class="fa-solid fa-clock"></i> ${days} Hari Lalu
+                            </span>
+                            <h4 class="font-bold text-slate-900 text-sm">${escapeHtml(c.name)}</h4>
+                            <span class="bg-slate-100 text-slate-800 font-bold px-2 py-0.5 rounded text-xs border border-slate-300 font-mono">${escapeHtml(c.plat)}</span>
+                            <span class="text-xs font-medium text-slate-600">${escapeHtml(c.motor)}</span>
+                            <span class="text-[11px] font-semibold text-slate-500">(${c.km ? c.km.toLocaleString('id-ID') : 0} KM)</span>
+                        </div>
+                        <div class="text-xs text-slate-600 mt-1 flex flex-wrap items-center gap-x-4 gap-y-1">
+                            <span><i class="fa-solid fa-phone text-slate-400"></i> WA: <b>+${formatPhoneNumber(c.phone)}</b></span>
+                            <span><i class="fa-solid fa-wrench text-slate-400"></i> Paket: ${escapeHtml(c.paket || 'Servis Lengkap')}</span>
+                            <span><i class="fa-solid fa-calendar-day text-slate-400"></i> Terakhir: ${formatDateID(c.date)}</span>
+                        </div>
+                        ${c.notes ? `<p class="text-[11px] text-indigo-700 bg-indigo-50 p-1.5 rounded mt-1 font-medium border border-indigo-100"><i class="fa-solid fa-clipboard-list"></i> Catatan Mekanik: ${escapeHtml(c.notes)}</p>` : ''}
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button onclick="toggleFollowUpStatus('${c.id}')" title="Tandai Sudah Dihubungi" class="px-3 py-1.5 bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 rounded-lg text-xs font-bold transition border border-slate-200">
+                            <i class="fa-solid fa-check"></i> Selesai
+                        </button>
+                        <button onclick="sendSingleWA('${c.id}')" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow transition flex items-center gap-1.5">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Kirim WA
+                        </button>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function renderCustomerList() {
+            const tbody = document.getElementById('customer-table-body');
+            const emptyState = document.getElementById('empty-state');
+            const searchQuery = document.getElementById('search-input').value.toLowerCase();
+            const filterMotor = document.getElementById('filter-motor').value;
+            const filterPaket = document.getElementById('filter-paket').value;
+            const sortBy = document.getElementById('sort-select').value;
+
+            tbody.innerHTML = '';
+
+            let filtered = customers.filter(c => {
+                const days = calculateDaysAgo(c.date);
+                if (currentTab === 'due') return days >= 60 && !c.followedUp;
+                if (currentTab === 'old') return days >= 120 && !c.followedUp;
+                if (currentTab === 'notes') return c.notes && c.notes.trim().length > 0;
+                return true;
+            });
+
+            if (filterMotor !== 'ALL') {
+                filtered = filtered.filter(c => c.motor && c.motor.toLowerCase().includes(filterMotor.toLowerCase()));
+            }
+
+            if (filterPaket !== 'ALL') {
+                filtered = filtered.filter(c => c.paket && c.paket === filterPaket);
+            }
+
+            if (searchQuery) {
+                filtered = filtered.filter(c => 
+                    c.name.toLowerCase().includes(searchQuery) ||
+                    c.plat.toLowerCase().includes(searchQuery) ||
+                    c.motor.toLowerCase().includes(searchQuery) ||
+                    c.phone.includes(searchQuery) ||
+                    (c.notes && c.notes.toLowerCase().includes(searchQuery))
+                );
+            }
+
+            filtered.sort((a, b) => {
+                const daysA = calculateDaysAgo(a.date);
+                const daysB = calculateDaysAgo(b.date);
+                if (sortBy === 'days-desc') return daysB - daysA;
+                if (sortBy === 'days-asc') return daysA - daysB;
+                if (sortBy === 'name-asc') return a.name.localeCompare(b.name);
+                return 0;
+            });
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            filtered.forEach(c => {
+                const days = calculateDaysAgo(c.date);
+                const formattedPhone = formatPhoneNumber(c.phone);
+
+                let categoryBadge = '';
+                if (c.followedUp) {
+                    categoryBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                        <i class="fa-solid fa-check"></i> Sudah Followup
+                    </span>`;
+                } else if (days >= 120) {
+                    categoryBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">
+                        <i class="fa-solid fa-user-clock"></i> Pasif (≥ 4 Bln)
+                    </span>`;
+                } else if (days >= 60) {
+                    categoryBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black bg-rose-100 text-honda-700 border border-rose-300">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Waktunya Servis
+                    </span>`;
+                } else {
+                    categoryBadge = `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                        <i class="fa-solid fa-shield"></i> Aman (&lt; 2 Bln)
+                    </span>`;
+                }
+
+                const tr = document.createElement('tr');
+                tr.className = (days >= 60 && !c.followedUp) ? 'bg-rose-50/30 hover:bg-rose-50 transition' : 'hover:bg-slate-50 transition';
+                
+                tr.innerHTML = `
+                    <td class="py-3 px-4 font-bold text-slate-800">
+                        <div>${escapeHtml(c.name)}</div>
+                        <div class="text-[11px] text-slate-500 font-mono mt-0.5"><i class="fa-brands fa-whatsapp text-emerald-600"></i> +${formattedPhone}</div>
+                    </td>
+                    <td class="py-3 px-4 font-bold text-slate-900">
+                        <div class="font-mono bg-slate-100 inline-block px-2 py-0.5 rounded border border-slate-300 text-xs">${escapeHtml(c.plat)}</div>
+                        <div class="text-xs font-semibold text-slate-600 mt-1">${escapeHtml(c.motor)}</div>
+                    </td>
+                    <td class="py-3 px-4">
+                        <div class="text-xs font-bold text-slate-700">${formatDateID(c.date)}</div>
+                        <div class="text-[11px] ${days >= 60 ? 'text-honda-600 font-bold' : 'text-slate-400'}">${days} Hari Lalu</div>
+                        <div class="text-[10px] text-slate-500 font-semibold mt-0.5"><i class="fa-solid fa-gauge-high"></i> ${c.km ? c.km.toLocaleString('id-ID') : 0} KM</div>
+                    </td>
+                    <td class="py-3 px-4 max-w-xs">
+                        <div class="text-xs font-bold text-slate-800">${escapeHtml(c.paket || 'Servis Lengkap')}</div>
+                        ${c.notes ? `<div class="text-[11px] text-indigo-700 bg-indigo-50/80 p-1 rounded mt-1 border border-indigo-100 font-medium">${escapeHtml(c.notes)}</div>` : '<div class="text-[10px] text-slate-400 italic mt-0.5">- Tidak ada catatan -</div>'}
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        ${categoryBadge}
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        <div class="text-[11px] font-medium text-slate-600">${c.lastBroadcast ? formatDateID(c.lastBroadcast) : '-'}</div>
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        <button onclick="sendSingleWA('${c.id}')" class="inline-flex items-center gap-1 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow transition">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> WA
+                        </button>
+                    </td>
+                    <td class="py-3 px-4 text-right space-x-1">
+                        <button onclick="updateServiceToToday('${c.id}')" title="Reset Servis Hari Ini" class="p-1.5 text-teal-600 hover:bg-teal-50 rounded-lg transition">
+                            <i class="fa-solid fa-wrench"></i>
+                        </button>
+                        <button onclick="openEditCustomerModal('${c.id}')" title="Edit Data" class="p-1.5 text-slate-500 hover:bg-slate-100 rounded-lg transition">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button onclick="deleteCustomer('${c.id}')" title="Hapus Data" class="p-1.5 text-rose-500 hover:bg-rose-50 rounded-lg transition">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-honda-600', 'text-white', 'shadow');
+                btn.classList.add('text-slate-600', 'hover:bg-slate-200');
+            });
+
+            const activeBtn = document.getElementById(`tab-${tab}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-slate-600', 'hover:bg-slate-200');
+                activeBtn.classList.add('bg-honda-600', 'text-white', 'shadow');
+            }
+
+            if (tab === 'templates') {
+                document.getElementById('view-contacts').classList.add('hidden');
+                document.getElementById('view-templates').classList.remove('hidden');
+                document.getElementById('view-templates').classList.add('flex');
+            } else {
+                document.getElementById('view-templates').classList.add('hidden');
+                document.getElementById('view-templates').classList.remove('flex');
+                document.getElementById('view-contacts').classList.remove('hidden');
+                renderCustomerList();
+            }
+        }
+
+        function buildWAMessage(cust) {
+            const days = calculateDaysAgo(cust.date);
+            let rawTpl = templates.reminder;
+
+            if (cust.notes && cust.notes.trim().length > 0 && currentTab === 'notes') {
+                rawTpl = templates.notes;
+            } else if (days >= 120) {
+                rawTpl = templates.old;
+            }
+
+            return rawTpl
+                .replace(/{nama}/g, cust.name || '')
+                .replace(/{plat}/g, cust.plat || '')
+                .replace(/{motor}/g, cust.motor || '')
+                .replace(/{tanggal_terakhir}/g, formatDateID(cust.date))
+                .replace(/{km_terakhir}/g, cust.km ? cust.km.toLocaleString('id-ID') : '0')
+                .replace(/{paket_servis}/g, cust.paket || 'Servis Lengkap')
+                .replace(/{catatan_mekanik}/g, cust.notes || 'Pemeriksaan rutin')
+                .replace(/{hari_lalu}/g, days);
+        }
+
+        function sendSingleWA(id) {
+            const cust = customers.find(c => c.id === id);
+            if (!cust) return;
+
+            cust.lastBroadcast = new Date().toISOString().split('T')[0];
+            saveCustomersToStorage();
+
+            const phone = formatPhoneNumber(cust.phone);
+            const text = encodeURIComponent(buildWAMessage(cust));
+            const url = `https://wa.me/${phone}?text=${text}`;
+
+            window.open(url, '_blank');
+        }
+
+        function toggleFollowUpStatus(id) {
+            const cust = customers.find(c => c.id === id);
+            if (!cust) return;
+
+            cust.followedUp = !cust.followedUp;
+            saveCustomersToStorage();
+            renderCustomerList();
+            showToast(`Status followup ${cust.name} (${cust.plat}) diperbarui.`);
+        }
+
+        function updateServiceToToday(id) {
+            const cust = customers.find(c => c.id === id);
+            if (!cust) return;
+
+            const today = new Date().toISOString().split('T')[0];
+            cust.date = today;
+            cust.followedUp = false;
+            saveCustomersToStorage();
+            renderCustomerList();
+            showToast(`Tanggal servis ${cust.plat} diperbarui ke Hari Ini!`);
+        }
+
+        function openAddCustomerModal() {
+            document.getElementById('modal-title').innerText = 'Tambah Pelanggan AHASS 09461';
+            document.getElementById('cust-id').value = '';
+            document.getElementById('customer-form').reset();
+            document.getElementById('cust-date').value = new Date().toISOString().split('T')[0];
+            document.getElementById('modal-customer').classList.remove('hidden');
+        }
+
+        function openEditCustomerModal(id) {
+            const cust = customers.find(c => c.id === id);
+            if (!cust) return;
+
+            document.getElementById('modal-title').innerText = 'Edit Pelanggan AHASS 09461';
+            document.getElementById('cust-id').value = cust.id;
+            document.getElementById('cust-name').value = cust.name;
+            document.getElementById('cust-plat').value = cust.plat;
+            document.getElementById('cust-motor').value = cust.motor;
+            document.getElementById('cust-phone').value = cust.phone;
+            document.getElementById('cust-date').value = cust.date;
+            document.getElementById('cust-km').value = cust.km || 0;
+            document.getElementById('cust-paket').value = cust.paket || 'Servis Lengkap + Ganti Oli';
+            document.getElementById('cust-notes').value = cust.notes || '';
+
+            document.getElementById('modal-customer').classList.remove('hidden');
+        }
+
+        function closeCustomerModal() {
+            document.getElementById('modal-customer').classList.add('hidden');
+        }
+
+        function handleCustomerFormSubmit(e) {
+            e.preventDefault();
+
+            const id = document.getElementById('cust-id').value;
+            const name = document.getElementById('cust-name').value.trim();
+            const plat = document.getElementById('cust-plat').value.trim().toUpperCase();
+            const motor = document.getElementById('cust-motor').value;
+            const phone = document.getElementById('cust-phone').value.trim();
+            const date = document.getElementById('cust-date').value;
+            const km = parseInt(document.getElementById('cust-km').value) || 0;
+            const paket = document.getElementById('cust-paket').value;
+            const notes = document.getElementById('cust-notes').value.trim();
+
+            if (id) {
+                const cust = customers.find(c => c.id === id);
+                if (cust) {
+                    cust.name = name;
+                    cust.plat = plat;
+                    cust.motor = motor;
+                    cust.phone = phone;
+                    cust.date = date;
+                    cust.km = km;
+                    cust.paket = paket;
+                    cust.notes = notes;
+                    showToast('Data pelanggan AHASS 09461 diperbarui.');
+                }
+            } else {
+                const newCust = {
+                    id: Date.now().toString(),
+                    name,
+                    plat,
+                    motor,
+                    phone,
+                    date,
+                    km,
+                    paket,
+                    notes,
+                    followedUp: false,
+                    lastBroadcast: null
+                };
+                customers.unshift(newCust);
+                showToast('Pelanggan AHASS 09461 baru ditambahkan.');
+            }
+
+            saveCustomersToStorage();
+            closeCustomerModal();
+            renderCustomerList();
+        }
+
+        function deleteCustomer(id) {
+            const cust = customers.find(c => c.id === id);
+            if (!cust) return;
+
+            if (confirm(`Hapus data pelanggan "${cust.name}" (${cust.plat})?`)) {
+                customers = customers.filter(c => c.id !== id);
+                saveCustomersToStorage();
+                renderCustomerList();
+                showToast('Data berhasil dihapus.');
+            }
+        }
+
+        function initTemplateFields() {
+            document.getElementById('tpl-reminder').value = templates.reminder;
+            document.getElementById('tpl-old').value = templates.old;
+            document.getElementById('tpl-notes').value = templates.notes || '';
+            document.getElementById('tpl-cs').value = templates.cs || '';
+        }
+
+        function saveTemplates() {
+            templates.reminder = document.getElementById('tpl-reminder').value.trim();
+            templates.old = document.getElementById('tpl-old').value.trim();
+            templates.notes = document.getElementById('tpl-notes').value.trim();
+            templates.cs = document.getElementById('tpl-cs').value.trim();
+            saveTemplatesToStorage();
+            showToast('Semua template pesan WA AHASS 09461 berhasil disimpan.');
+        }
+
+        function insertVariable(varTag) {
+            const activeEl = document.activeElement;
+            if (activeEl && activeEl.tagName === 'TEXTAREA') {
+                const start = activeEl.selectionStart;
+                const end = activeEl.selectionEnd;
+                const text = activeEl.value;
+                activeEl.value = text.substring(0, start) + varTag + text.substring(end);
+                activeEl.focus();
+                activeEl.selectionStart = activeEl.selectionEnd = start + varTag.length;
+            } else {
+                showToast('Klik terlebih dahulu kolom template yang ingin disisipi.');
+            }
+        }
+
+        function openBroadcastQueueModal() {
+            document.getElementById('modal-broadcast').classList.remove('hidden');
+            generateBroadcastQueue();
+        }
+
+        function closeBroadcastQueueModal() {
+            document.getElementById('modal-broadcast').classList.add('hidden');
+        }
+
+        function generateBroadcastQueue() {
+            const filterSeg = document.getElementById('broadcast-filter').value;
+            const container = document.getElementById('broadcast-queue-list');
+            container.innerHTML = '';
+
+            let queueCust = customers.filter(c => {
+                if (filterSeg === 'due') return isDueFor2MonthService(c);
+                if (filterSeg === 'old') return isOldCustomer(c);
+                if (filterSeg === 'notes') return c.notes && c.notes.trim().length > 0;
+                return true;
+            });
+
+            document.getElementById('queue-count').innerText = queueCust.length;
+
+            if (queueCust.length === 0) {
+                container.innerHTML = `<p class="text-center text-xs text-slate-400 py-8 font-medium">Tidak ada target broadcast pada kategori ini.</p>`;
+                return;
+            }
+
+            queueCust.forEach((c, idx) => {
+                const days = calculateDaysAgo(c.date);
+                const isSent = broadcastQueueSentState[c.id];
+                const msg = buildWAMessage(c);
+
+                const div = document.createElement('div');
+                div.className = `p-3.5 rounded-xl border ${isSent ? 'bg-slate-50 border-slate-200 opacity-60' : 'bg-white border-slate-200 shadow-sm'} flex flex-col md:flex-row md:items-center justify-between gap-3`;
+                
+                div.innerHTML = `
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-black text-slate-400">#${idx + 1}</span>
+                            <h4 class="font-bold text-slate-800 text-xs">${escapeHtml(c.name)}</h4>
+                            <span class="bg-slate-100 text-slate-800 font-bold px-1.5 py-0.5 rounded text-[10px] border border-slate-300 font-mono">${escapeHtml(c.plat)}</span>
+                            <span class="text-[10px] font-bold text-honda-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">${days} Hari</span>
+                        </div>
+                        <div class="text-[11px] text-slate-600 mt-1 line-clamp-2 bg-slate-50 p-2 rounded border border-slate-100 font-mono">
+                            ${escapeHtml(msg)}
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        ${isSent 
+                            ? `<span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-lg text-xs font-bold flex items-center gap-1"><i class="fa-solid fa-check"></i> Terkirim</span>` 
+                            : `<button onclick="sendQueueWA('${c.id}')" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow transition flex items-center gap-1.5">
+                                <i class="fa-brands fa-whatsapp"></i> Kirim WA
+                               </button>`
+                        }
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function sendQueueWA(id) {
+            broadcastQueueSentState[id] = true;
+            sendSingleWA(id);
+            generateBroadcastQueue();
+        }
+
+        function exportDataCSV() {
+            if (customers.length === 0) {
+                showToast('Database kosong.');
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "ID,Nama,Plat Nomor,Motor,No WA,Tanggal Servis,KM Terakhir,Paket Servis,Catatan Mekanik,Status FollowUp,Last Broadcast\n";
+
+            customers.forEach(c => {
+                const row = [
+                    `"${c.id}"`,
+                    `"${c.name.replace(/"/g, '""')}"`,
+                    `"${c.plat}"`,
+                    `"${(c.motor || '').replace(/"/g, '""')}"`,
+                    `"${c.phone}"`,
+                    `"${c.date}"`,
+                    `"${c.km || 0}"`,
+                    `"${(c.paket || '').replace(/"/g, '""')}"`,
+                    `"${(c.notes || '').replace(/"/g, '""')}"`,
+                    `"${c.followedUp ? 'Selesai' : 'Belum'}"`,
+                    `"${c.lastBroadcast || ''}"`
+                ].join(",");
+                csvContent += row + "\n";
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `AHASS_09461_Slawi_Konsumen_${new Date().toISOString().split('T')[0]}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            showToast('Export CSV AHASS 09461 berhasil!');
+        }
+
+        function openImportModal() {
+            document.getElementById('modal-import').classList.remove('hidden');
+        }
+
+        function closeImportModal() {
+            document.getElementById('modal-import').classList.add('hidden');
+        }
+
+        function processImportFile() {
+            const fileInput = document.getElementById('import-file-input');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                showToast('Pilih file CSV atau JSON!');
+                return;
+            }
+
+            const reader = new FileReader();
+
+            if (file.name.endsWith('.json')) {
+                reader.onload = function(e) {
+                    try {
+                        const imported = JSON.parse(e.target.result);
+                        if (Array.isArray(imported)) {
+                            customers = imported;
+                            saveCustomersToStorage();
+                            renderCustomerList();
+                            closeImportModal();
+                            showToast('Import database JSON berhasil!');
+                        }
+                    } catch(err) {
+                        showToast('Format JSON tidak valid.');
+                    }
+                };
+                reader.readAsText(file);
+            } else if (file.name.endsWith('.csv')) {
+                reader.onload = function(e) {
+                    try {
+                        const text = e.target.result;
+                        const lines = text.split('\n');
+                        const newCust = [];
+
+                        for (let i = 1; i < lines.length; i++) {
+                            const line = lines[i].trim();
+                            if (!line) continue;
+                            const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(col => col.replace(/^"|"$/g, '').trim());
+
+                            if (cols.length >= 6) {
+                                newCust.push({
+                                    id: cols[0] || Date.now().toString() + i,
+                                    name: cols[1] || 'Pelanggan ' + i,
+                                    plat: cols[2] || 'G 0000 XX',
+                                    motor: cols[3] || 'Honda BeAT',
+                                    phone: cols[4] || '',
+                                    date: cols[5] || new Date().toISOString().split('T')[0],
+                                    km: parseInt(cols[6]) || 0,
+                                    paket: cols[7] || 'Servis Lengkap',
+                                    notes: cols[8] || '',
+                                    followedUp: cols[9] === 'Selesai',
+                                    lastBroadcast: cols[10] || null
+                                });
+                            }
+                        }
+
+                        if (newCust.length > 0) {
+                            customers = newCust;
+                            saveCustomersToStorage();
+                            renderCustomerList();
+                            closeImportModal();
+                            showToast(`Berhasil import ${newCust.length} data pelanggan!`);
+                        }
+                    } catch(err) {
+                        showToast('Format CSV tidak sesuai.');
+                    }
+                };
+                reader.readAsText(file);
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+
+            toastMsg.innerText = msg;
+            toast.classList.remove('hidden');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-10', 'opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-10', 'opacity-0');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 300);
+            }, 3000);
+        }
+
+        function escapeHtml(text) {
+            if(!text) return '';
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
